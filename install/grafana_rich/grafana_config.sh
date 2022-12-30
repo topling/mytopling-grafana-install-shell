@@ -81,7 +81,7 @@ function create_dashboard_to_list() {
 function customer_config() {
 	cp ${cur_path}/dashboard/dashboard-list-base.json ${cur_path}/dashboard/dashboard-list.json
 
-	create_dashboard_to_list todis-exporter.json "todis-exporter-url"
+	create_dashboard_to_list mytopling-overview.json "mytopling-overview-url"
 	create_dashboard_to_list properties-all.json "properties-all-url"
 	create_dashboard_to_list properties-cfstat.json "properties-cfstat-url"
 	create_dashboard_to_list properties-common.json "properties-common-url"
@@ -89,11 +89,9 @@ function customer_config() {
 	create_dashboard_to_list ticker-simple.json "ticker-url"
 	create_dashboard_to_list ticker_aggregate.json "ticker-aggregate-url"
 
-	create_dashboard_to_list length-histogram.json "length-histogram-url"
 	create_dashboard_to_list rocksdb-histogram-all.json "engine-histogram-url"
 	create_dashboard_to_list rocksdb-histogram-common.json "engine-histogram-common-url"
 	create_dashboard_to_list rocksdb-histogram-compaction.json "engine-histogram-compaction-flush-url"
-	create_dashboard_to_list time-histogram.json "time-histogram-url"
 	
 	create_folder rich
 	create_dashboard double-line-histogram-length.json ${last_fold_id}

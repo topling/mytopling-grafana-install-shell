@@ -376,8 +376,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "\"props-strings\"",
-          "value": "\"props-strings\""
+          "text": "\"props-default\"",
+          "value": "\"props-default\""
         },
         "description": null,
         "error": null,
@@ -389,61 +389,21 @@
         "options": [
           {
             "selected": false,
-            "text": "\"props-hashes-data_cf\"",
-            "value": "\"props-hashes-data_cf\""
+            "text": "\"props-default\"",
+            "value": "\"props-default\""
           },
           {
             "selected": false,
-            "text": "\"props-hashes-default\"",
-            "value": "\"props-hashes-default\""
+            "text": "\"props-system\"",
+            "value": "\"props-system\""
           },
           {
             "selected": false,
-            "text": "\"props-lists-data_cf\"",
-            "value": "\"props-lists-data_cf\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-lists-default\"",
-            "value": "\"props-lists-default\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-sets-default\"",
-            "value": "\"props-sets-default\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-sets-member_cf\"",
-            "value": "\"props-sets-member_cf\""
-          },
-          {
-            "selected": true,
-            "text": "\"props-strings\"",
-            "value": "\"props-strings\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-zsets-data_cf\"",
-            "value": "\"props-zsets-data_cf\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-zsets-default\"",
-            "value": "\"props-zsets-default\""
-          },
-          {
-            "selected": false,
-            "text": "\"props-zsets-score_cf\"",
-            "value": "\"props-zsets-score_cf\""
-          },
-          {
-            "selected": false,
-            "text": "",
-            "value": ""
+            "text": "\"props-default_sk\"",
+            "value": "\"props-default_sk\""
           }
         ],
-        "query": "\"props-hashes-data_cf\",\"props-hashes-default\",\"props-lists-data_cf\",\"props-lists-default\",\"props-sets-default\",\"props-sets-member_cf\",\"props-strings\",\"props-zsets-data_cf\",\"props-zsets-default\",\"props-zsets-score_cf\", ",
+        "query": "\"props-default\",\"props-system\",\"props-default_sk\",` ",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
