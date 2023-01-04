@@ -7,23 +7,16 @@
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
-        "hide": false,
-        "iconColor": "#e0752d",
-        "limit": 100,
-        "name": "PMM Annotations",
-        "showIn": 0,
-        "tags": [
-          "pmm_annotation"
-        ],
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
         "target": {
           "limit": 100,
           "matchAny": false,
-          "tags": [
-            "pmm_annotation"
-          ],
-          "type": "tags"
+          "tags": [],
+          "type": "dashboard"
         },
-        "type": "tags"
+        "type": "dashboard"
       }
     ]
   },
