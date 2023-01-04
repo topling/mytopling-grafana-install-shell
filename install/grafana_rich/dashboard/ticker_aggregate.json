@@ -111,7 +111,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(engine:bytes:written{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:bytes:written{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
           "legendFormat": "bytes:written_rate",
@@ -119,7 +119,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:bytes:written{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:bytes:written{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -128,7 +128,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:wal:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:wal:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -137,7 +137,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:wal:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:wal:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -146,7 +146,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:flush:write:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:flush:write:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -155,7 +155,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:flush:write:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:flush:write:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -273,7 +273,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(engine:write:self{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:write:self{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
           "legendFormat": "write:self_rate",
@@ -281,7 +281,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:write:self{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:write:self{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -290,7 +290,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:write:other{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:write:other{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -299,7 +299,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:write:other{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:write:other{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -308,7 +308,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:write:wal{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:write:wal{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -317,7 +317,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:write:wal{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:write:wal{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -440,7 +440,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(engine:compact:write:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:compact:write:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "lcompact:write:bytes:zip_rate",
@@ -448,7 +448,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:compact:write:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:compact:write:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -457,7 +457,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:lcompact:write:bytes:raw{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:lcompact:write:bytes:raw{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "lcompact:write:bytes:raw_rate",
@@ -465,7 +465,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:lcompact:write:bytes:raw{job=\"stat-$data_type\"}[$__range])\t",
+          "expr": "rate(engine:lcompact:write:bytes:raw{job=\"stat\"}[$__range])\t",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -474,7 +474,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:remote:compact:write:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:remote:compact:write:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "dcompact:write:bytes:zip_rate",
@@ -482,7 +482,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:remote:compact:write:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:remote:compact:write:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -491,7 +491,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:dcompact:write:bytes:raw{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:dcompact:write:bytes:raw{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "dcompact:write:bytes:raw_rate",
@@ -499,7 +499,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:dcompact:write:bytes:raw{job=\"stat-$data_type\"}[$__range])\t",
+          "expr": "rate(engine:dcompact:write:bytes:raw{job=\"stat\"}[$__range])\t",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -612,7 +612,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(engine:compact:read:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:compact:read:bytes{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
           "legendFormat": "lcompact:read:bytes:zip_rate",
@@ -620,7 +620,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:compact:read:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:compact:read:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -629,7 +629,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:remote:compact:read:bytes{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:remote:compact:read:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -638,7 +638,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:remote:compact:read:bytes{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:remote:compact:read:bytes{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -747,7 +747,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate($metric_name{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate($metric_name{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
           "legendFormat": "rate",
@@ -755,7 +755,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate($metric_name{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate($metric_name{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -873,7 +873,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_acquires{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
           "legendFormat": "superversion_acquires_rate",
@@ -881,7 +881,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_acquires{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -890,7 +890,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_cleanups{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -899,7 +899,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_cleanups{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -908,7 +908,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_releases{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[1m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -917,7 +917,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(engine:number:superversion_releases{job=\"stat-$data_type\"}[$__range])",
+          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[$__range])",
           "hide": false,
           "instant": true,
           "interval": "",
@@ -1123,11 +1123,6 @@
             "value": "engine:db:iter:bytes:read"
           },
           {
-            "selected": false,
-            "text": "engine:no:file:closes",
-            "value": "engine:no:file:closes"
-          },
-          {
             "selected": true,
             "text": "engine:no:file:opens",
             "value": "engine:no:file:opens"
@@ -1136,21 +1131,6 @@
             "selected": false,
             "text": "engine:no:file:errors",
             "value": "engine:no:file:errors"
-          },
-          {
-            "selected": false,
-            "text": "engine:l0:slowdown:micros",
-            "value": "engine:l0:slowdown:micros"
-          },
-          {
-            "selected": false,
-            "text": "engine:memtable:compaction:micros",
-            "value": "engine:memtable:compaction:micros"
-          },
-          {
-            "selected": false,
-            "text": "engine:l0:num:files:stall:micros",
-            "value": "engine:l0:num:files:stall:micros"
           },
           {
             "selected": true,
@@ -1169,16 +1149,6 @@
           },
           {
             "selected": false,
-            "text": "engine:rate:limit:delay:millis",
-            "value": "engine:rate:limit:delay:millis"
-          },
-          {
-            "selected": false,
-            "text": "engine:num:iterators",
-            "value": "engine:num:iterators"
-          },
-          {
-            "selected": false,
             "text": "engine:number:multiget:get",
             "value": "engine:number:multiget:get"
           },
@@ -1191,11 +1161,6 @@
             "selected": false,
             "text": "engine:number:multiget:bytes:read",
             "value": "engine:number:multiget:bytes:read"
-          },
-          {
-            "selected": false,
-            "text": "engine:number:deletes:filtered",
-            "value": "engine:number:deletes:filtered"
           },
           {
             "selected": false,
@@ -1226,11 +1191,6 @@
             "selected": false,
             "text": "engine:wal:synced",
             "value": "engine:wal:synced"
-          },
-          {
-            "selected": false,
-            "text": "engine:write:timeout",
-            "value": "engine:write:timeout"
           },
           {
             "selected": false,
@@ -1353,53 +1313,7 @@
             "value": "engine:error:handler:autoresume:success:count"
           }
         ],
-        "query": "engine:bloom:filter:useful,engine:bloom:filter:full:positive,engine:bloom:filter:full:true:positive,engine:bloom:filter:micros,engine:memtable:hit,engine:memtable:miss,engine:l0:hit,engine:l1:hit,engine:l2andup:hit,engine:compaction:key:drop:new,engine:compaction:key:drop:obsolete,engine:compaction:key:drop:range_del,engine:compaction:key:drop:user,engine:compaction:range_del:drop:obsolete,engine:compaction:optimized:del:drop:obsolete,engine:compaction:cancelled,engine:number:keys:written,engine:number:keys:read,engine:number:keys:updated,engine:bytes:read,engine:number:db:seek,engine:number:db:next,engine:number:db:prev,engine:number:db:seek:found,engine:number:db:next:found,engine:number:db:prev:found,engine:db:iter:bytes:read,engine:no:file:closes,engine:no:file:opens,engine:no:file:errors,engine:l0:slowdown:micros,engine:memtable:compaction:micros,engine:l0:num:files:stall:micros,engine:stall:micros,engine:db:cond:wait:nanos,engine:db:mutex:wait:nanos,engine:rate:limit:delay:millis,engine:num:iterators,engine:number:multiget:get,engine:number:multiget:keys:read,engine:number:multiget:bytes:read,engine:number:deletes:filtered,engine:number:merge:failures,engine:bloom:filter:prefix:checked,engine:bloom:filter:prefix:useful,engine:number:reseeks:iteration,engine:getupdatessince:calls,engine:wal:synced,engine:write:timeout,engine:compact:read:marked:bytes,engine:compact:read:periodic:bytes,engine:compact:read:ttl:bytes,engine:compact:write:marked:bytes,engine:compact:write:periodic:bytes,engine:compact:write:ttl:bytes,engine:number:direct:load:table:properties,engine:merge:operation:time:nanos,engine:filter:operation:time:nanos,engine:read:amp:estimate:useful:bytes,engine:read:amp:total:read:bytes,engine:number:rate_limiter:drains,engine:number:iter:skip,engine:number:multiget:keys:found,engine:num:iterator:created,engine:num:iterator:deleted,engine:files:marked:trash,engine:files:deleted:immediately,engine:error:handler:bg:errro:count,engine:error:handler:bg:io:errro:count,engine:error:handler:bg:retryable:io:errro:count,engine:error:handler:autoresume:count,engine:error:handler:autoresume:retry:total:count,engine:error:handler:autoresume:success:count,",
-        "queryValue": "",
-        "skipUrlSync": false,
-        "type": "custom"
-      },
-      {
-        "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "strings",
-          "value": "strings"
-        },
-        "description": null,
-        "error": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "data_type",
-        "multi": false,
-        "name": "data_type",
-        "options": [
-          {
-            "selected": true,
-            "text": "strings",
-            "value": "strings"
-          },
-          {
-            "selected": false,
-            "text": "hashes",
-            "value": "hashes"
-          },
-          {
-            "selected": false,
-            "text": "lists",
-            "value": "lists"
-          },
-          {
-            "selected": false,
-            "text": "sets",
-            "value": "sets"
-          },
-          {
-            "selected": false,
-            "text": "zsets",
-            "value": "zsets"
-          }
-        ],
-        "query": " strings,hashes,lists,sets,zsets,",
+        "query": "engine:bloom:filter:useful,engine:bloom:filter:full:positive,engine:bloom:filter:full:true:positive,engine:memtable:hit,engine:memtable:miss,engine:l0:hit,engine:l1:hit,engine:l2andup:hit,engine:compaction:key:drop:new,engine:compaction:key:drop:obsolete,engine:compaction:key:drop:range_del,engine:compaction:key:drop:user,engine:compaction:range_del:drop:obsolete,engine:compaction:optimized:del:drop:obsolete,engine:compaction:cancelled,engine:number:keys:written,engine:number:keys:read,engine:number:keys:updated,engine:bytes:read,engine:number:db:seek,engine:number:db:next,engine:number:db:prev,engine:number:db:seek:found,engine:number:db:next:found,engine:number:db:prev:found,engine:db:iter:bytes:read,engine:no:file:opens,engine:no:file:errors,engine:stall:micros,engine:db:cond:wait:nanos,engine:db:mutex:wait:nanos,engine:number:multiget:get,engine:number:multiget:keys:read,engine:number:multiget:bytes:read,engine:number:merge:failures,engine:bloom:filter:prefix:checked,engine:bloom:filter:prefix:useful,engine:number:reseeks:iteration,engine:getupdatessince:calls,engine:wal:synced,engine:compact:read:marked:bytes,engine:compact:read:periodic:bytes,engine:compact:read:ttl:bytes,engine:compact:write:marked:bytes,engine:compact:write:periodic:bytes,engine:compact:write:ttl:bytes,engine:number:direct:load:table:properties,engine:merge:operation:time:nanos,engine:filter:operation:time:nanos,engine:read:amp:estimate:useful:bytes,engine:read:amp:total:read:bytes,engine:number:rate_limiter:drains,engine:number:iter:skip,engine:number:multiget:keys:found,engine:num:iterator:created,engine:num:iterator:deleted,engine:files:marked:trash,engine:files:deleted:immediately,engine:error:handler:bg:errro:count,engine:error:handler:bg:io:errro:count,engine:error:handler:bg:retryable:io:errro:count,engine:error:handler:autoresume:count,engine:error:handler:autoresume:retry:total:count,engine:error:handler:autoresume:success:count,",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
