@@ -17,9 +17,9 @@
 #### 下载
 download.tar.gz 是安装过程用到的 rpm 包和 grafana 修改内容。
 ```
-git clone https://github.com/topling/todis-grafana-install-shell.git
+git clone https://github.com/topling/mytopling-grafana-install-shell.git
 cd todis-grafana-install-shell
-wget "https://github.com/topling/todis-grafana-install-shell/releases/download/download_file/download.tar.gz"
+wget "https://github.com/topling/mytopling-grafana-install-shell/releases/download/download_file/download.tar.gz"
 tar xf download.tar.gz
 ```
 
@@ -33,13 +33,14 @@ enable_admin_dashboard=false # false or anything
   
 function server_config() {
     # server config
-    prometheus_port=9090
-    prometheus_listen_port=9090
-    prometheus_host=localhost
+    mytopling_host=localhost
+    mytopling_port=8000
+    prometheus_port=55351
+    prometheus_listen_port=55351
+    mytopling_exporter_listen_address=55353
+    prometheus_host=192.168.31.2
     grafana_host=localhost
-    grafana_port=3000
-    todis_host=localhost
-    todis_port=8000
+    grafana_port=55352
 }
 ```
 - grafana_admin_password 是 grafana 的管理员密码，安装过程会修改 admin 的默认密码 admin 为 grafana_admin_password 的内容；  
@@ -51,13 +52,14 @@ function server_config() {
 - **todis_host todis 主机地址；**  
 - **todis_port todis 主机 http 接口端口号。**
 
-主要是 todis_host 和 todis_port 对应 todis 的相关配置即可。
+主要是 mytopling_host 和 mytopling_port 对应 mytopling 的相关配置即可。
 ### 安装过程可能创建目录
 ```
 /usr/local/node-exporter
 /usr/local/process-exporter
 /usr/local/grafana
 /usr/local/prometheus
+/usr/local/mytopling-exporter
 /data/prometheus
 ```
 
