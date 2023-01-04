@@ -49,9 +49,9 @@ function check_user() {
 }
 
 
-#server_config
+server_config
 #dell1_config
-dell2_mysql_config
+#dell2_mysql_config
 
 mytopling_host_port=${mytopling_host}:${mytopling_port}
 prometheus_host_port=${prometheus_host}:${prometheus_port}
