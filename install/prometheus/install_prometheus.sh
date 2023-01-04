@@ -24,7 +24,7 @@ function prometheus_config() {
 	cp ${prometheus_config_file} .
 	sed "s/prometheus_ip_port/${prometheus_host_port}/g" -i ${configfile}
 	sed "s/process_exporter_ip_port/localhost:9256/g" -i ${configfile}
-	sed "s/db_ip_port/${todis_host_port}/g" -i ${configfile}
+	sed "s/db_ip_port/${mytopling_host_port}/g" -i ${configfile}
 }
 
 function prometheus_dir() {

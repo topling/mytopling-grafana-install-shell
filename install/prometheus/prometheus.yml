@@ -22,6 +22,10 @@ scrape_configs:
     static_configs:
         - targets: ['prometheus_ip_port', 'process_exporter_ip_port','localhost:9100']
 
+  - job_name: 'mytopling'
+    static_configs:
+        - targets: ['localhost:55353']
+
   - job_name: 'stat'
     metrics_path: '/statistics/stat'
     params:
@@ -47,13 +51,3 @@ scrape_configs:
         noint: ['0']
     static_configs:
         - targets: ['db_ip_port']
-
-  - job_name: 'props-default_sk'
-    metrics_path: '/props/.rocksdb/default_sk'
-    params:
-        metric: ['1']
-        html: ['0']
-        noint: ['0']
-    static_configs:
-        - targets: ['db_ip_port']
-

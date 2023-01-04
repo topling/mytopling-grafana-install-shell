@@ -1,0 +1,12 @@
+[Unit]
+Description=mysql_exporter
+Documentation=https://github.com/topling/mytopling_exporter/blob/mytopling-exporter/README.md
+After=network.target
+[Service]
+Type=simple
+User=prometheus
+Environment="DATA_SOURCE_NAME=exporter:exporter@(localhost:3306)/"
+ExecStart=/usr/local/mytopling-exporter/mysqld_exporter --collect.global_status --no-collect.auto_increment.columns --collect.info_schema.query_response_time --web.listen-address=:9104 --collect.info_schema.processlist
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
