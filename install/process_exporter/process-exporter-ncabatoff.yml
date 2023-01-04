@@ -1,10 +1,19 @@
 process_names:
    - name: "{{.Matches}}"
      cmdline:
-     - 'pika'
-   - name: "{{.Matches}}"
-     cmdline:
      - 'prometheus'
    - name: "{{.Matches}}"
      cmdline:
      - 'grafana'
+   - name: "{{.Matches}}"
+     cmdline:
+     - 'mysqld'
+   - name: "{{.Matches}}"
+     cmdline:
+     - 'node_exporter'
+   - name: "{{.Matches}}"
+     cmdline:
+     - 'mysql_exporter'
+   - name: "{{.Matches}}"
+     cmdline:
+     - 'process-exporter'
