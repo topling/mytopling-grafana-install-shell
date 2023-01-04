@@ -35,12 +35,12 @@ function server_config() {
     # server config
     mytopling_host=localhost
     mytopling_port=8000
-    prometheus_port=55351
-    prometheus_listen_port=55351
-    mytopling_exporter_listen_address=55353
-    prometheus_host=192.168.31.2
+    prometheus_port=9090
+    prometheus_listen_port=9090
+    mytopling_exporter_listen_address=9104
+    prometheus_host=localhost
     grafana_host=localhost
-    grafana_port=55352
+    grafana_port=3000
 }
 ```
 - grafana_admin_password 是 grafana 的管理员密码，安装过程会修改 admin 的默认密码 admin 为 grafana_admin_password 的内容；  
