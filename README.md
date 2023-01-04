@@ -8,7 +8,7 @@
 
 
 
-- **todis 使用的 grafana 和 prometheus 安装脚本，安装在 todis 主机上；**  
+- **mytpling 使用的 grafana 和 prometheus 安装脚本，安装在 mytpling 主机上；**  
 - **请勿在已有 grafana 和 prometheus 服务的主机上执行脚本。**
 - 操作系统支持centos 8 和阿里云 ecs 系统，其他系统未测试。
 
@@ -18,7 +18,7 @@
 download.tar.gz 是安装过程用到的 rpm 包和 grafana 修改内容。
 ```
 git clone https://github.com/topling/mytopling-grafana-install-shell.git
-cd todis-grafana-install-shell
+cd mytpling-grafana-install-shell
 wget "https://github.com/topling/mytopling-grafana-install-shell/releases/download/download_file/download.tar.gz"
 tar xf download.tar.gz
 ```
@@ -49,8 +49,8 @@ function server_config() {
 - prometheus_listen_port 是 prometheus 的启动参数设置端口，该设置是为了适应 docker 环境的端口映射，如果是使用一般主机设置和 prometheus_port 相同即可；  
 - prometheus_host 主机地址；  
 - grafana_port 监听端口设置；  
-- **todis_host todis 主机地址；**  
-- **todis_port todis 主机 http 接口端口号。**
+- **mytpling_host mytpling 主机地址；**  
+- **mytpling_port mytpling 主机 http 接口端口号。**
 
 主要是 mytopling_host 和 mytopling_port 对应 mytopling 的相关配置即可。
 ### 安装过程可能创建目录
