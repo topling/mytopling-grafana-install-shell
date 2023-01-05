@@ -14,7 +14,7 @@ if [ ! -f "${bin_path}/todis_exporter" ]; then
 	cp ${cur_path}/../../download/todis_exporter ${bin_path}
 fi
 
-cp ${service_file} /usr/lib/systemd/system/
+cp ${service_file} /etc/systemd/system/
 
 systemctl daemon-reload
 systemctl enable todis-exporter

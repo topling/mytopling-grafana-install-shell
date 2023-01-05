@@ -14,7 +14,7 @@ if [ ! -f "${bin_path}/process-exporter-0.4.0.linux-amd64.tar.gz" ]; then
 fi
 
 cp ${config_file} ${bin_path}/process-exporter-0.4.0.linux-amd64/
-cp ${service_file} /usr/lib/systemd/system/
+cp ${service_file} /etc/systemd/system/
 
 chown -R prometheus:prometheus ${bin_path}
 systemctl daemon-reload

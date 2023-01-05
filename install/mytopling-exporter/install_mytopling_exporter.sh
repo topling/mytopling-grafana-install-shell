@@ -10,8 +10,7 @@ cur_path=$(cd $(dirname $0); pwd)
 download_path=${cur_path}/../../download
 mytopling_exporter_service_file=${cur_path}/mytopling-exporter.service
 
-#sed "s/9104/${mytopling_exporter_listen_address}/g" ${cur_path}/mytopling-exporter.service.base > ${cur_path}/mytopling-exporter.service
-sed "s/9104/${mytopling_exporter_listen_address}/g" ${cur_path}/mytopling-exporter.service.base > ${cur_path}/mytopling-exporter.service
+sed "s/9104/${mytopling_exporter_listen_address}/g" ${cur_path}/mytopling-exporter.service.base > ${mytopling_exporter_service_file}
 
 #安装mytopling-exporter：
 function mytopling_exporter_config() {

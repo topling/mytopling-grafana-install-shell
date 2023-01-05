@@ -16,7 +16,7 @@ if [ ! -f "${bin_path}/node_exporter-1.2.2.linux-amd64.tar.gz" ]; then
 	tar -xvf node_exporter-1.2.2.linux-amd64.tar.gz
 fi
 
-cp ${service_file} /usr/lib/systemd/system/
+cp ${service_file} /etc/systemd/system/
 
 systemctl daemon-reload
 systemctl enable node-exporter
