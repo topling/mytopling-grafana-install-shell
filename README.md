@@ -3,6 +3,13 @@
 - 操作系统支持centos 8 和阿里云 ecs 系统，其他系统未测试。
 
 # 1、安装
+#### mytopling 设置用户
+需要在 mytopling 创建用户，用于 mysql-exporter 整体运行信息。  
+在 install/mytopling-exporter/mytopling-exporter.service.base 中 使用，如有冲突，把自己设置用户信息更改到该文件中即可。
+```
+CREATE USER 'exporter'@'localhost' IDENTIFIED BY 'exporter';
+GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'localhost';
+```
 
 #### 下载
 download.tar.gz 是安装过程用到的 rpm 包和 grafana 修改内容。
