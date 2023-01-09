@@ -17,8 +17,8 @@ function download_file() {
 	tar -zxf grafana-8.2.4.linux-amd64.tar.gz
 	cd grafana-8.2.4
 	unzip -oq ${cur_path}/../../download/grafana_build_file/grafana-8.2.4_v11.zip -d ./
-	groupadd grafana
-	useradd -g grafana -s /sbin/nologin grafana
+	groupadd -f grafana
+	useradd -g grafana -s /sbin/nologin grafana > /dev/null 2>&1
 	chown -R grafana:grafana /usr/local/grafana
 }
 

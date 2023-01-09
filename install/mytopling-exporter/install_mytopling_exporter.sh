@@ -21,8 +21,8 @@ function mytopling_exporter_config() {
 }
 
 function mytopling_exporter_dir() {
-	groupadd mytopling-exporter
-	useradd -g mytopling-exporter -s /sbin/nologin mytopling-exporter
+	groupadd -f mytopling-exporter
+	useradd -g mytopling-exporter -s /sbin/nologin mytopling-exporter > /dev/null 2>&1
 	chown -R mytopling-exporter:mytopling-exporter  /usr/local/mytopling-exporter
 }
 

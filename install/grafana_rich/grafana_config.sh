@@ -18,7 +18,7 @@ function change_password() {
 	body="{\"password\":\"${password}\"}"
 	cmd="curl -s -X PUT ${curl_head} -d '${body}' -i http://${user}:admin@${grafana_addr}/api/admin/users/1/password"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 }
 
 function create_datasource() {
@@ -26,19 +26,19 @@ function create_datasource() {
 	body="{\"name\":\"Prometheus\",\"type\":\"prometheus\",\"url\":\"http://${prometheus_addr}\",\"access\":\"proxy\"}"
 	cmd="curl -s -X POST ${curl_head} -d '${body}' -i ${http_grafana}/api/datasources"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 }
 
 function create_dashboard() {
 	file=${cur_path}/dashboard/$1
         if [ $# = 2 ];then
 		cmd="sed -e '50,\$s|\"folderId\":.*\$|\"folderId\": ${2}|g' -i ${file}"
-		echo ${cmd}
+		output_debug ${cmd}
 		eval ${cmd}
 	fi
 	cmd="curl -s -X POST ${curl_head} -d @${file} -i ${http_grafana}/api/dashboards/db"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 	last_dashboard_id=`echo "${result}"|sed 's/,/\n/g'|grep '"id":'|cut -d ":" -f 2|sed 's/"//g'`
 	last_dashboard_url=`echo "${result}"|sed 's/,/\n/g'|grep '"url":'|cut -d ":" -f 2|sed 's/"//g'`
 }
@@ -53,14 +53,14 @@ function change_default_dashboard() {
 	dashboard_id=$1
 	cmd="curl -s -X PUT ${curl_head} -d '{\"theme\":\"\",\"homeDashboardId\":${dashboard_id},\"timezone\":\"\"}' ${http_grafana}/api/org/preferences"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 }
 
 function create_folder() {
 	fold_name=$1
 	cmd="curl -s -X POST ${curl_head} -d '{\"title\": \"${fold_name}\"}' ${http_grafana}/api/folders"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 	last_fold_id=`echo "${result}"|sed 's/,/\n/g'|grep '"id":'|cut -d ":" -f 2|sed 's/"//g'`
 	last_fold_uid=`echo "${result}"|sed 's/,/\n/g'|grep '"uid":'|cut -d ":" -f 2|sed 's/"//g'`
 }
@@ -70,7 +70,7 @@ function update_folder_permissions() {
 	grafana_addr=$2
 	cmd="curl -s -X POST ${curl_head} -d '{\"items\":[]}' ${http_grafana}/api/folders/${fold_uid}/permissions"
 	result=`eval ${cmd}`
-	echo -e ${cmd} "\n" ${result} "\n"
+	output_debug ${cmd} "\n" ${result} "\n"
 }
 
 function create_dashboard_to_list() {

@@ -5,7 +5,7 @@ service_file=${cur_path}/process_exporter.service
 config_file=${cur_path}/process-exporter-ncabatoff.yml
 bin_path=/usr/local/process-exporter
 
-mkdir ${bin_path}
+mkdir -p ${bin_path}
 
 if [ ! -f "${bin_path}/process-exporter-0.4.0.linux-amd64.tar.gz" ]; then
 	cp ${cur_path}/../../download/process-exporter-0.4.0.linux-amd64.tar.gz ${bin_path}

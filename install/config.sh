@@ -57,3 +57,10 @@ mytopling_host_port=${mytopling_host}:${mytopling_port}
 prometheus_host_port=${prometheus_host}:${prometheus_port}
 
 check_if_include_config="true"
+debug=false #true or other
+
+function output_debug() {
+	if [ "${debug}" = "true" ]; then
+		echo -e "$@"
+	fi
+}

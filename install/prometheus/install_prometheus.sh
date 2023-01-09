@@ -28,8 +28,8 @@ function prometheus_config() {
 }
 
 function prometheus_dir() {
-	groupadd prometheus
-	useradd -g prometheus -s /sbin/nologin prometheus
+	groupadd -f prometheus
+	useradd -g prometheus -s /sbin/nologin prometheus > /dev/null 2>&1
 	chown -R prometheus:prometheus  /usr/local/prometheus
 	#mkdir -p /var/lib/prometheus
 	#chown -R prometheus:prometheus /var/lib/prometheus/
