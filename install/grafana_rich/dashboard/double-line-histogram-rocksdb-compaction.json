@@ -148,14 +148,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "clamp_min(histogram_quantile(0.5, rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])),1)",
+          "expr": "clamp_min(histogram_quantile(0.5, rate(${bucket_id}_bucket{job=\"stat\"}[1m])),1)",
           "interval": "",
           "legendFormat": "P50",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "clamp_min(histogram_quantile(0.90, rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])),1)",
+          "expr": "clamp_min(histogram_quantile(0.90, rate(${bucket_id}_bucket{job=\"stat\"}[1m])),1)",
           "hide": false,
           "interval": "",
           "legendFormat": "P90",
@@ -163,7 +163,7 @@
         },
         {
           "exemplar": true,
-          "expr": "clamp_min(histogram_quantile(0.99, rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])),1)",
+          "expr": "clamp_min(histogram_quantile(0.99, rate(${bucket_id}_bucket{job=\"stat\"}[1m])),1)",
           "hide": false,
           "interval": "",
           "legendFormat": "P99",
@@ -171,7 +171,7 @@
         },
         {
           "exemplar": true,
-          "expr": "clamp_min(histogram_quantile(0.999, rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])),1)",
+          "expr": "clamp_min(histogram_quantile(0.999, rate(${bucket_id}_bucket{job=\"stat\"}[1m])),1)",
           "hide": false,
           "interval": "",
           "legendFormat": "P999",
@@ -179,7 +179,7 @@
         },
         {
           "exemplar": true,
-          "expr": "clamp_min(histogram_quantile(0.9999, rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])),1)",
+          "expr": "clamp_min(histogram_quantile(0.9999, rate(${bucket_id}_bucket{job=\"stat\"}[1m])),1)",
           "hide": false,
           "interval": "",
           "legendFormat": "P9999",
@@ -187,7 +187,7 @@
         },
         {
           "exemplar": true,
-          "expr": "delta(${bucket_id}_sum{job=\"stat-$data_type\"}[1m])/delta(${bucket_id}_count{job=\"stat-$data_type\"}[1m])",
+          "expr": "delta(${bucket_id}_sum{job=\"stat\"}[1m])/delta(${bucket_id}_count{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "AVG",
@@ -195,7 +195,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(${bucket_id}_bucket{job=\"stat-$data_type\"}[1m])",
+          "expr": "rate(${bucket_id}_bucket{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
           "legendFormat": "le{{le}}",

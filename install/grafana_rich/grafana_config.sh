@@ -94,11 +94,9 @@ function customer_config() {
 	create_dashboard_to_list rocksdb-histogram-compaction.json "engine-histogram-compaction-flush-url"
 	
 	create_folder rich
-	create_dashboard double-line-histogram-length.json ${last_fold_id}
 	create_dashboard double-line-histogram-rocksdb-common.json ${last_fold_id}
 	create_dashboard double-line-histogram-rocksdb-compaction.json ${last_fold_id}
 	create_dashboard double-line-histogram-rocksdb-all.json ${last_fold_id}
-	create_dashboard double-line-histogram-time.json ${last_fold_id}
 
 	create_folder list
 	create_dashboard dashboard-list.json ${last_fold_id}
