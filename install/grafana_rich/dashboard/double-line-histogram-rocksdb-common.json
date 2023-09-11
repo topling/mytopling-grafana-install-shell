@@ -222,51 +222,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "strings",
-          "value": "strings"
-        },
-        "description": null,
-        "error": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "data_type",
-        "multi": false,
-        "name": "data_type",
-        "options": [
-          {
-            "selected": true,
-            "text": "strings",
-            "value": "strings"
-          },
-          {
-            "selected": false,
-            "text": "hashes",
-            "value": "hashes"
-          },
-          {
-            "selected": false,
-            "text": "lists",
-            "value": "lists"
-          },
-          {
-            "selected": false,
-            "text": "sets",
-            "value": "sets"
-          },
-          {
-            "selected": false,
-            "text": "zsets",
-            "value": "zsets"
-          }
-        ],
-        "query": "strings,hashes,lists,sets,zsets,",
-        "skipUrlSync": false,
-        "type": "custom"
-      },
-      {
-        "allValue": null,
-        "current": {
           "selected": true,
           "text": [
             "engine:bytes:per:read",
