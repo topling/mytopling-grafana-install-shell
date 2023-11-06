@@ -114,7 +114,7 @@
           "expr": "rate(engine:bytes:written{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
-          "legendFormat": "bytes:written_rate",
+          "legendFormat": "bytes:written_cur",
           "refId": "A"
         },
         {
@@ -132,7 +132,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "engine:wal:bytes_rate",
+          "legendFormat": "engine:wal:bytes_cur",
           "refId": "C"
         },
         {
@@ -150,7 +150,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "flush:write:bytes_rate",
+          "legendFormat": "flush:write:bytes_cur",
           "refId": "E"
         },
         {
@@ -276,7 +276,7 @@
           "expr": "rate(engine:write:self{job=\"stat\"}[1m])",
           "instant": false,
           "interval": "",
-          "legendFormat": "write:self_rate",
+          "legendFormat": "write:self_cur",
           "refId": "A"
         },
         {
@@ -294,7 +294,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "write:other_rate",
+          "legendFormat": "write:other_cur",
           "refId": "C"
         },
         {
@@ -312,7 +312,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "write:wal_rate",
+          "legendFormat": "write:wal_cur",
           "refId": "E"
         },
         {
@@ -443,7 +443,7 @@
           "expr": "rate(engine:compact:write:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "lcompact:write:bytes:zip_rate",
+          "legendFormat": "lcompact:write:bytes:zip_cur",
           "refId": "A"
         },
         {
@@ -460,7 +460,7 @@
           "expr": "rate(engine:lcompact:write:bytes:raw{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "lcompact:write:bytes:raw_rate",
+          "legendFormat": "lcompact:write:bytes:raw_cur",
           "refId": "C"
         },
         {
@@ -477,7 +477,7 @@
           "expr": "rate(engine:remote:compact:write:bytes{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "dcompact:write:bytes:zip_rate",
+          "legendFormat": "dcompact:write:bytes:zip_cur",
           "refId": "E"
         },
         {
@@ -494,7 +494,7 @@
           "expr": "rate(engine:dcompact:write:bytes:raw{job=\"stat\"}[1m])",
           "hide": false,
           "interval": "",
-          "legendFormat": "dcompact:write:bytes:raw_rate",
+          "legendFormat": "dcompact:write:bytes:raw_cur",
           "refId": "G"
         },
         {
@@ -567,8 +567,170 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 0,
+        "x": 18,
         "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 36,
+      "interval": "15s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:430",
+          "alias": "superversion_acquires_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:129",
+          "alias": "superversion_cleanups_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:572",
+          "alias": "superversion_releases_avg",
+          "transform": "constant"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[1m])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "superversion_acquires_cur",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "superversion_acquires_avg",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "superversion_cleanups_cur",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "superversion_cleanups_avg",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "superversion_releases_cur",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "superversion_releases_avg",
+          "refId": "F"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "superversion",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:113",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:114",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 9
       },
       "hiddenSeries": false,
       "id": 35,
@@ -597,12 +759,12 @@
       "seriesOverrides": [
         {
           "$$hashKey": "object:430",
-          "alias": "lcompact:read:bytes_avg",
+          "alias": "lcompact:read:bytes:zip_avg",
           "transform": "constant"
         },
         {
           "$$hashKey": "object:129",
-          "alias": "dcompact:read:bytes_avg",
+          "alias": "dcompact:read:bytes:zip_avg",
           "transform": "constant"
         }
       ],
@@ -613,9 +775,10 @@
         {
           "exemplar": true,
           "expr": "rate(engine:compact:read:bytes{job=\"stat\"}[1m])",
+          "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "lcompact:read:bytes:zip_rate",
+          "legendFormat": "lcompact:read:bytes:zip_cur",
           "refId": "A"
         },
         {
@@ -633,7 +796,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "dcompact:read:bytes:zip_rate",
+          "legendFormat": "dcompact:read:bytes:zip_cur",
           "refId": "C"
         },
         {
@@ -706,8 +869,663 @@
       "gridPos": {
         "h": 9,
         "w": 6,
-        "x": 0,
+        "x": 6,
         "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 102,
+      "interval": "15s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:430",
+          "alias": "hit_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:129",
+          "alias": "miss_avg",
+          "transform": "constant"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(engine:memtable:hit{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "hit_cur",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:memtable:hit{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "hit_avg",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:memtable:miss{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "miss_cur",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:memtable:miss{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "miss_avg",
+          "refId": "D"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "memtable hit/miss",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:113",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:114",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 103,
+      "interval": "15s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:430",
+          "alias": "keys_written_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:129",
+          "alias": "keys_read_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:136",
+          "alias": "multiget_read_avg",
+          "transform": "constant"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:keys:written{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "keys_written_cur",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:keys:written{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "keys_written_avg",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:keys:read{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "keys_read_cur",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:keys:read{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "keys_read_avg",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:multiget:keys:read{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "multiget_read_cur",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:multiget:keys:read{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "multiget_read_avg",
+          "refId": "F"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "number keys",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:113",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:114",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 107,
+      "interval": "15s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:430",
+          "alias": "bytes_written_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:129",
+          "alias": "bytes_read_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:136",
+          "alias": "multiget_read_avg",
+          "transform": "constant"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(engine:bytes:written{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "bytes_written_cur",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:bytes:written{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "bytes_written_avg",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:bytes:read{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "bytes_read_cur",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:bytes:read{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "bytes_read_avg",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:multiget:bytes:read{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "multiget_read_cur",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:number:multiget:bytes:read{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "multiget_read_avg",
+          "refId": "F"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "bytes read/writen",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:113",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:114",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 18
+      },
+      "hiddenSeries": false,
+      "id": 108,
+      "interval": "15s",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:430",
+          "alias": "open_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:129",
+          "alias": "error_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:136",
+          "alias": "trash_avg",
+          "transform": "constant"
+        },
+        {
+          "$$hashKey": "object:474",
+          "alias": "immediately_avg",
+          "transform": "constant"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(engine:no:file:opens{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "open_cur",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:no:file:opens{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "open_avg",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:no:file:errors{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "error_cur",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:no:file:errors{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "error_avg",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:files:marked:trash{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "trash_cur",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:files:marked:trash{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "trash_avg",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:files:deleted:immediately{job=\"stat\"}[1m])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "immediately_cur",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(engine:files:deleted:immediately{job=\"stat\"}[$__range])",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "immediately_avg",
+          "refId": "H"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "file",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:113",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:114",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": 0,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 2,
@@ -805,168 +1623,6 @@
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 9
-      },
-      "hiddenSeries": false,
-      "id": 36,
-      "interval": "15s",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.2.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "repeatDirection": "h",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:430",
-          "alias": "superversion_acquires_avg",
-          "transform": "constant"
-        },
-        {
-          "$$hashKey": "object:129",
-          "alias": "superversion_cleanups_avg",
-          "transform": "constant"
-        },
-        {
-          "$$hashKey": "object:572",
-          "alias": "superversion_releases_avg",
-          "transform": "constant"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[1m])",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "superversion_acquires_rate",
-          "refId": "A"
-        },
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_acquires{job=\"stat\"}[$__range])",
-          "hide": false,
-          "instant": true,
-          "interval": "",
-          "legendFormat": "superversion_acquires_avg",
-          "refId": "B"
-        },
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[1m])",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "superversion_cleanups_rate",
-          "refId": "C"
-        },
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_cleanups{job=\"stat\"}[$__range])",
-          "hide": false,
-          "instant": true,
-          "interval": "",
-          "legendFormat": "superversion_cleanups_avg",
-          "refId": "D"
-        },
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[1m])",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "superversion_releases_rate",
-          "refId": "E"
-        },
-        {
-          "exemplar": true,
-          "expr": "rate(engine:number:superversion_releases{job=\"stat\"}[$__range])",
-          "hide": false,
-          "instant": true,
-          "interval": "",
-          "legendFormat": "superversion_releases_avg",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "superversion",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:113",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": 0,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:114",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": 0,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     }
   ],
   "refresh": false,
@@ -980,18 +1636,18 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "engine:number:keys:written",
-            "engine:no:file:opens",
+            "engine:no:file:errors",
             "engine:stall:micros",
-            "engine:files:deleted:immediately"
+            "engine:files:marked:trash"
           ],
           "value": [
             "engine:number:keys:written",
-            "engine:no:file:opens",
+            "engine:no:file:errors",
             "engine:stall:micros",
-            "engine:files:deleted:immediately"
+            "engine:files:marked:trash"
           ]
         },
         "description": null,
@@ -1123,12 +1779,12 @@
             "value": "engine:db:iter:bytes:read"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "engine:no:file:opens",
             "value": "engine:no:file:opens"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "engine:no:file:errors",
             "value": "engine:no:file:errors"
           },
@@ -1273,17 +1929,17 @@
             "value": "engine:num:iterator:deleted"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "engine:files:marked:trash",
             "value": "engine:files:marked:trash"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "engine:files:deleted:immediately",
             "value": "engine:files:deleted:immediately"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "engine:error:handler:bg:errro:count",
             "value": "engine:error:handler:bg:errro:count"
           },
@@ -1314,7 +1970,7 @@
           }
         ],
         "query": "engine:bloom:filter:useful,engine:bloom:filter:full:positive,engine:bloom:filter:full:true:positive,engine:memtable:hit,engine:memtable:miss,engine:l0:hit,engine:l1:hit,engine:l2andup:hit,engine:compaction:key:drop:new,engine:compaction:key:drop:obsolete,engine:compaction:key:drop:range_del,engine:compaction:key:drop:user,engine:compaction:range_del:drop:obsolete,engine:compaction:optimized:del:drop:obsolete,engine:compaction:cancelled,engine:number:keys:written,engine:number:keys:read,engine:number:keys:updated,engine:bytes:read,engine:number:db:seek,engine:number:db:next,engine:number:db:prev,engine:number:db:seek:found,engine:number:db:next:found,engine:number:db:prev:found,engine:db:iter:bytes:read,engine:no:file:opens,engine:no:file:errors,engine:stall:micros,engine:db:cond:wait:nanos,engine:db:mutex:wait:nanos,engine:number:multiget:get,engine:number:multiget:keys:read,engine:number:multiget:bytes:read,engine:number:merge:failures,engine:bloom:filter:prefix:checked,engine:bloom:filter:prefix:useful,engine:number:reseeks:iteration,engine:getupdatessince:calls,engine:wal:synced,engine:compact:read:marked:bytes,engine:compact:read:periodic:bytes,engine:compact:read:ttl:bytes,engine:compact:write:marked:bytes,engine:compact:write:periodic:bytes,engine:compact:write:ttl:bytes,engine:number:direct:load:table:properties,engine:merge:operation:time:nanos,engine:filter:operation:time:nanos,engine:read:amp:estimate:useful:bytes,engine:read:amp:total:read:bytes,engine:number:rate_limiter:drains,engine:number:iter:skip,engine:number:multiget:keys:found,engine:num:iterator:created,engine:num:iterator:deleted,engine:files:marked:trash,engine:files:deleted:immediately,engine:error:handler:bg:errro:count,engine:error:handler:bg:io:errro:count,engine:error:handler:bg:retryable:io:errro:count,engine:error:handler:autoresume:count,engine:error:handler:autoresume:retry:total:count,engine:error:handler:autoresume:success:count,",
-        "queryValue": "",
+        "queryValue": "file",
         "skipUrlSync": false,
         "type": "custom"
       }
