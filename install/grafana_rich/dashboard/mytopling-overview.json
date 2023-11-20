@@ -204,74 +204,41 @@
       "type": "stat"
     },
     {
+      "aliasColors": {},
+      "bars": false,
       "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
       "datasource": "Prometheus",
       "description": "**Current QPS**\n\nBased on the queries reported by MySQL's ``SHOW STATUS`` command, it is the number of statements executed by the server within the last second. This variable includes statements executed within stored programs, unlike the Questions variable. It does not count \n``COM_PING`` or ``COM_STATISTICS`` commands.",
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "fixedColor": "rgb(31, 120, 193)",
-            "mode": "fixed"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 2,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 35
-              },
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": 75
-              }
-            ]
-          },
           "unit": "short"
         },
         "overrides": []
       },
+      "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 4,
         "w": 24,
         "x": 0,
         "y": 5
       },
+      "hiddenSeries": false,
       "id": 396,
       "interval": "$interval",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
       "links": [
         {
           "targetBlank": true,
@@ -280,17 +247,19 @@
         }
       ],
       "maxDataPoints": 100,
+      "nullPointMode": "null",
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "single"
-        }
+        "alertThreshold": true
       },
+      "percentage": false,
       "pluginVersion": "8.2.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "calculatedInterval": "10m",
@@ -307,8 +276,46 @@
           "step": 20
         }
       ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
       "title": "slave behind master",
-      "type": "timeseries"
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
