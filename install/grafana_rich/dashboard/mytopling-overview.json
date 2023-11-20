@@ -204,13 +204,120 @@
       "type": "stat"
     },
     {
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "description": "**Current QPS**\n\nBased on the queries reported by MySQL's ``SHOW STATUS`` command, it is the number of statements executed by the server within the last second. This variable includes statements executed within stored programs, unlike the Questions variable. It does not count \n``COM_PING`` or ``COM_STATISTICS`` commands.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 35
+              },
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": 75
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 396,
+      "interval": "$interval",
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "MySQL Server Status Variables",
+          "url": "https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html#statvar_Queries"
+        }
+      ],
+      "maxDataPoints": 100,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.4",
+      "targets": [
+        {
+          "calculatedInterval": "10m",
+          "datasourceErrors": {},
+          "errors": {},
+          "exemplar": true,
+          "expr": "mysql_slave_status_seconds_behind_master{instance=\"$host\"}",
+          "format": "time_series",
+          "interval": "$interval",
+          "intervalFactor": 1,
+          "legendFormat": "seconds_behind_master",
+          "metric": "",
+          "refId": "A",
+          "step": 20
+        }
+      ],
+      "title": "slave behind master",
+      "type": "timeseries"
+    },
+    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 9
       },
       "id": 383,
       "panels": [],
@@ -235,7 +342,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 6
+        "y": 10
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -381,7 +488,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 6
+        "y": 10
       },
       "hiddenSeries": false,
       "id": 10,
@@ -518,7 +625,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 17
       },
       "id": 384,
       "panels": [],
@@ -543,7 +650,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 53,
@@ -652,7 +759,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 14
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 11,
@@ -783,7 +890,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 25
       },
       "id": 385,
       "panels": [],
@@ -807,7 +914,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 22
+        "y": 26
       },
       "hiddenSeries": false,
       "id": 22,
@@ -935,7 +1042,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 22
+        "y": 26
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -1084,7 +1191,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 33
       },
       "id": 386,
       "panels": [],
@@ -1109,7 +1216,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 30,
@@ -1254,7 +1361,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 30
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 48,
@@ -1348,7 +1455,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 41
       },
       "id": 387,
       "panels": [],
@@ -1373,7 +1480,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 47,
@@ -1493,7 +1600,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 32,
@@ -1601,7 +1708,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 49
       },
       "id": 388,
       "panels": [],
@@ -1626,7 +1733,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 50
       },
       "hiddenSeries": false,
       "id": 9,
@@ -1744,7 +1851,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 46
+        "y": 50
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -1853,7 +1960,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 57
       },
       "id": 389,
       "panels": [],
@@ -1878,7 +1985,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 58
       },
       "hiddenSeries": false,
       "id": 50,
@@ -2056,7 +2163,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 65
       },
       "id": 390,
       "panels": [],
@@ -2081,7 +2188,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 66
       },
       "hiddenSeries": false,
       "id": 14,
@@ -2194,7 +2301,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 69
+        "y": 73
       },
       "hiddenSeries": false,
       "id": 39,
@@ -2304,7 +2411,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 76
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 8,
@@ -2409,7 +2516,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 83
+        "y": 87
       },
       "hiddenSeries": false,
       "id": 28,
@@ -2513,7 +2620,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 90
+        "y": 94
       },
       "hiddenSeries": false,
       "id": 40,
@@ -2618,7 +2725,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 101
       },
       "hiddenSeries": false,
       "id": 49,
@@ -2715,7 +2822,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 104
+        "y": 108
       },
       "id": 391,
       "panels": [],
@@ -2740,7 +2847,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 105
+        "y": 109
       },
       "hiddenSeries": false,
       "id": 46,
@@ -2860,7 +2967,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 105
+        "y": 109
       },
       "height": "",
       "hiddenSeries": false,
@@ -3009,7 +3116,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 112
+        "y": 116
       },
       "id": 392,
       "panels": [],
@@ -3033,7 +3140,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 113
+        "y": 117
       },
       "hiddenSeries": false,
       "id": 43,
@@ -3135,7 +3242,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 113
+        "y": 117
       },
       "hiddenSeries": false,
       "id": 41,
@@ -3248,7 +3355,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 120
+        "y": 124
       },
       "id": 393,
       "panels": [],
@@ -3273,7 +3380,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 121
+        "y": 125
       },
       "hiddenSeries": false,
       "id": 44,
@@ -3424,7 +3531,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 121
+        "y": 125
       },
       "hiddenSeries": false,
       "id": 42,
@@ -3537,7 +3644,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 128
+        "y": 132
       },
       "id": 394,
       "panels": [],
@@ -3562,7 +3669,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 129
+        "y": 133
       },
       "hiddenSeries": false,
       "id": 54,
@@ -3689,7 +3796,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 136
+        "y": 140
       },
       "id": 395,
       "panels": [],
@@ -3713,7 +3820,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 137
+        "y": 141
       },
       "hiddenSeries": false,
       "id": 31,
@@ -3834,7 +3941,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 137
+        "y": 141
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -3993,7 +4100,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 137
+        "y": 141
       },
       "height": "",
       "hiddenSeries": false,
@@ -4140,7 +4247,7 @@
         "h": 7,
         "w": 8,
         "x": 0,
-        "y": 144
+        "y": 148
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -4264,7 +4371,7 @@
         "h": 7,
         "w": 8,
         "x": 8,
-        "y": 144
+        "y": 148
       },
       "height": "250px",
       "hiddenSeries": false,
@@ -4393,7 +4500,7 @@
         "h": 7,
         "w": 8,
         "x": 16,
-        "y": 144
+        "y": 148
       },
       "hiddenSeries": false,
       "id": 38,
@@ -4580,8 +4687,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "localhost:55353",
-          "value": "localhost:55353"
+          "text": "localhost:9104",
+          "value": "localhost:9104"
         },
         "datasource": "Prometheus",
         "definition": "",
